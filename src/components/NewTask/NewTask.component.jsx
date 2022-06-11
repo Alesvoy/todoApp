@@ -15,6 +15,7 @@ const NewTask = () => {
     const newTasks = [...tasks];
 
     newTasks.push({
+      // BUG: Id's gets duplicated and causes bugs
       id: newTasks.length + 1,
       text,
       done: false,

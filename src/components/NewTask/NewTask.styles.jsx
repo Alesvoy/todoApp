@@ -16,7 +16,7 @@ export const TaskContainer = styled.div`
 
 export const CheckCircle = styled.div`
   cursor: pointer;
-  width: 2rem;
+  width: 2.1rem;
   height: 2rem;
   border-radius: 10rem;
   border: 1px solid gray;

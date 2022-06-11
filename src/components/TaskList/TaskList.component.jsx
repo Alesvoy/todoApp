@@ -1,20 +1,29 @@
 import { useContext } from 'react';
 
 import { tasksContext } from '../../contexts/task.component';
+import Task from '../Task/Task.component';
+
+import { List, Footer } from './TaskList.styles';
 
 const TaskList = () => {
   const { tasks } = useContext(tasksContext);
 
   return (
-    <section>
+    <List>
       {tasks.map((task) => {
         return (
-          <div key={task.id}>
-            <h1>{task.text}</h1>
-          </div>
+          <Task key={task.id} text={task.text} id={task.id} done={task.done} />
         );
       })}
-    </section>
+      {tasks.length !== 0 ? (
+        <Footer>
+          <p>{tasks.filter((task) => task.done === false).length} items left</p>
+          <p>Clear Completed</p>
+        </Footer>
+      ) : (
+        ''
+      )}
+    </List>
   );
 };
 
